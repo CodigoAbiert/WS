@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://predios_Manzana" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://predios_Manzana" xmlns:intf="http://predios_Manzana" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://predios_Manzana" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="cuentaPredial">
+    <complexType>
+     <sequence>
+      <element name="edo_cve" type="xsd:int"/>
+      <element name="regcat_cve" type="xsd:int"/>
+      <element name="mun_cve" type="xsd:int"/>
+      <element name="zoncat_cve" type="xsd:int"/>
+      <element name="lim_cve" type="xsd:int"/>
+      <element name="sectorcat_cve" type="xsd:int"/>
+      <element name="man_cve" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cuentaPredialResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="cuentaPredialReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="geoManzana">
+    <complexType>
+     <sequence>
+      <element name="edo_cve" type="xsd:int"/>
+      <element name="regcat_cve" type="xsd:int"/>
+      <element name="mun_cve" type="xsd:int"/>
+      <element name="zoncat_cve" type="xsd:int"/>
+      <element name="lim_cve" type="xsd:int"/>
+      <element name="sectorcat_cve" type="xsd:int"/>
+      <element name="man_cve" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="geoManzanaResponse">
+    <complexType>
+     <sequence>
+      <element name="geoManzanaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="jsonDatosPredios">
+    <complexType>
+     <sequence>
+      <element name="edo_cve" type="xsd:int"/>
+      <element name="regcat_cve" type="xsd:int"/>
+      <element name="mun_cve" type="xsd:int"/>
+      <element name="zoncat_cve" type="xsd:int"/>
+      <element name="lim_cve" type="xsd:int"/>
+      <element name="sectorcat_cve" type="xsd:int"/>
+      <element name="man_cve" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="jsonDatosPrediosResponse">
+    <complexType>
+     <sequence>
+      <element name="jsonDatosPrediosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="jsonDatosNuevo">
+    <complexType>
+     <sequence>
+      <element name="edo_cve" type="xsd:int"/>
+      <element name="regcat_cve" type="xsd:int"/>
+      <element name="mun_cve" type="xsd:int"/>
+      <element name="zoncat_cve" type="xsd:int"/>
+      <element name="lim_cve" type="xsd:int"/>
+      <element name="sectorcat_cve" type="xsd:int"/>
+      <element name="man_cve" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="jsonDatosNuevoResponse">
+    <complexType>
+     <sequence>
+      <element name="jsonDatosNuevoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="geoManzanaResponse">
+
+      <wsdl:part element="impl:geoManzanaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="geoManzanaRequest">
+
+      <wsdl:part element="impl:geoManzana" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="jsonDatosPrediosResponse">
+
+      <wsdl:part element="impl:jsonDatosPrediosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="jsonDatosPrediosRequest">
+
+      <wsdl:part element="impl:jsonDatosPredios" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cuentaPredialRequest">
+
+      <wsdl:part element="impl:cuentaPredial" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="jsonDatosNuevoResponse">
+
+      <wsdl:part element="impl:jsonDatosNuevoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="jsonDatosNuevoRequest">
+
+      <wsdl:part element="impl:jsonDatosNuevo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cuentaPredialResponse">
+
+      <wsdl:part element="impl:cuentaPredialResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Servicios_Predios_Manzana">
+
+      <wsdl:operation name="cuentaPredial">
+
+         <wsdl:input message="impl:cuentaPredialRequest" name="cuentaPredialRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:cuentaPredialResponse" name="cuentaPredialResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="geoManzana">
+
+         <wsdl:input message="impl:geoManzanaRequest" name="geoManzanaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:geoManzanaResponse" name="geoManzanaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="jsonDatosPredios">
+
+         <wsdl:input message="impl:jsonDatosPrediosRequest" name="jsonDatosPrediosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:jsonDatosPrediosResponse" name="jsonDatosPrediosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="jsonDatosNuevo">
+
+         <wsdl:input message="impl:jsonDatosNuevoRequest" name="jsonDatosNuevoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:jsonDatosNuevoResponse" name="jsonDatosNuevoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Servicios_Predios_ManzanaSoapBinding" type="impl:Servicios_Predios_Manzana">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="cuentaPredial">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cuentaPredialRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cuentaPredialResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="geoManzana">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="geoManzanaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="geoManzanaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="jsonDatosPredios">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="jsonDatosPrediosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="jsonDatosPrediosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="jsonDatosNuevo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="jsonDatosNuevoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="jsonDatosNuevoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Servicios_Predios_ManzanaService">
+
+      <wsdl:port binding="impl:Servicios_Predios_ManzanaSoapBinding" name="Servicios_Predios_Manzana">
+
+         <wsdlsoap:address location="http://localhost:8080/WS_Predios/services/Servicios_Predios_Manzana"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

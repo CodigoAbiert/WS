@@ -1,0 +1,62 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Servicios_Predios_ManzanaService WSDL service -->
+
+  <service name="Servicios_Predios_Manzana" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://predios_Manzana"/>
+      <parameter name="wsdlServiceElement" value="Servicios_Predios_ManzanaService"/>
+      <parameter name="schemaQualified" value="http://predios_Manzana"/>
+      <parameter name="wsdlServicePort" value="Servicios_Predios_Manzana"/>
+      <parameter name="className" value="predios_Manzana.Servicios_Predios_ManzanaSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Servicios_Predios_Manzana"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="cuentaPredial" qname="operNS:cuentaPredial" xmlns:operNS="http://predios_Manzana" returnQName="retNS:cuentaPredialReturn" xmlns:retNS="http://predios_Manzana" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:edo_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:regcat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mun_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:zoncat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lim_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:sectorcat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:man_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="geoManzana" qname="operNS:geoManzana" xmlns:operNS="http://predios_Manzana" returnQName="retNS:geoManzanaReturn" xmlns:retNS="http://predios_Manzana" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:edo_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:regcat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mun_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:zoncat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lim_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:sectorcat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:man_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="jsonDatosPredios" qname="operNS:jsonDatosPredios" xmlns:operNS="http://predios_Manzana" returnQName="retNS:jsonDatosPrediosReturn" xmlns:retNS="http://predios_Manzana" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:edo_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:regcat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mun_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:zoncat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lim_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:sectorcat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:man_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="jsonDatosNuevo" qname="operNS:jsonDatosNuevo" xmlns:operNS="http://predios_Manzana" returnQName="retNS:jsonDatosNuevoReturn" xmlns:retNS="http://predios_Manzana" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:edo_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:regcat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mun_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:zoncat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:lim_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:sectorcat_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:man_cve" xmlns:pns="http://predios_Manzana" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="jsonDatosPredios jsonDatosNuevo geoManzana cuentaPredial"/>
+
+  </service>
+</deployment>
