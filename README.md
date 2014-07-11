@@ -1,4 +1,4 @@
 WS
 ==
 
-WebServices que regresan geometria con serializada con JSON
+WebServices que regresan geometria serializada con JSON
