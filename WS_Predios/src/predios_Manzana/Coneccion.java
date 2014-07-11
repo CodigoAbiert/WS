@@ -22,8 +22,8 @@ public class Coneccion {
 			 String nombredb= "gev_zacatecas_reload";
 			 String puerto="5432";
 			 String url="jdbc:postgresql://"+host+"/"+nombredb;
-			 String usuario = "portalcontenido";
-			 String password = "rootGGWX";
+			 String usuario = "123";
+			 String password = "123";
 
 			conexion=DriverManager.getConnection(url,usuario,password);
 			
